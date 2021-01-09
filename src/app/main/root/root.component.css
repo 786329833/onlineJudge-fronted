@@ -1,0 +1,28 @@
+.root {
+  display: flex;
+  display: -webkit-flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.content {
+  display: -webkit-flex;
+  display: flex;
+  flex: 1;
+}
+
+.left {
+  width: 200px;
+}
+
+.middle {
+  flex: 1;
+}
+
+.right {
+  width: 200px;
+}
+
+.footer {
+  height: 20px;
+}

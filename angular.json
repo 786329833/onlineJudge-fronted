@@ -1,6 +1,6 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
-  "version": 1, 
+  "version": 1,
   "newProjectRoot": "projects",
   "projects": {
     "onlineJudge": {
@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "onlineJudge"
+    }
+  },
+  "defaultProject": "onlineJudge",
+  "cli": {
+    "analytics": "436a7af7-1ddb-4595-8330-2df1da745195"
+  }
 }
