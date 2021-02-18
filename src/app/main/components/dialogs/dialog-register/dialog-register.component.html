@@ -1,0 +1,51 @@
+<div class="register">
+  <mat-dialog-content class="register-dialog">
+    <div class="register-title">
+      <span>新用户注册</span>
+    </div>
+    <mat-form-field class="account-input">
+      <input
+        matInput
+        type="text"
+        [(ngModel)]="account"
+        placeholder="账号"
+        [formControl]="accountFormControl"
+      />
+      {{accountFormControl.hasError('required')}}
+      <mat-error *ngIf="accountFormControl.hasError('match')">{{
+        errorDetail.constructInvaild.msg
+      }}</mat-error>
+    </mat-form-field>
+    <mat-form-field class="passwd-input">
+      <input matInput type="password" [(ngModel)]="passwd" placeholder="密码" />
+    </mat-form-field>
+    <mat-form-field class="repeat-passwd-input">
+      <input
+        matInput
+        type="text"
+        [(ngModel)]="passwdRepeat"
+        placeholder="重复密码"
+      />
+      <mat-error>
+        {{ errorDetail.twoPasswdNotSame.msg }}
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field class="username-input">
+      <input matInput type="text" [(ngModel)]="username" placeholder="用户名" />
+    </mat-form-field>
+  </mat-dialog-content>
+
+  <mat-dialog-actions class="register-dialog-actions">
+    <button
+      mat-raised-button
+      color="primary"
+      class="confirm-button"
+      (click)="register()"
+    >
+      确定
+    </button>
+    <button mat-raised-button mat-dialog-close class="cancle-button">
+      取消
+    </button>
+  </mat-dialog-actions>
+</div>

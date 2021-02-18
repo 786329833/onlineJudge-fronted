@@ -1,0 +1,42 @@
+.login-dialog {
+  width: 600px;
+  height: 320px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.login-dialog-actions {
+  justify-content: center;
+  display: flex;
+}
+
+.login-title {
+  font-size: 24px;
+  text-align: center;
+}
+
+.account-input {
+  position: relative;
+  top: 50px;
+  margin: 20px 0;
+  width: 400px;
+  justify-content: center;
+}
+
+.passwd-input {
+  position: relative;
+  top: 50px;
+  width: 400px;
+  margin: 20px 0;
+}
+
+.confirm-button {
+  width: 100px;
+  margin: 0px 20px;
+}
+
+.cancle-button {
+  width: 100px;
+  margin: 0px 20px;
+}

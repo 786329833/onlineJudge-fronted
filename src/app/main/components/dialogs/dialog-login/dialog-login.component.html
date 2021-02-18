@@ -1,0 +1,18 @@
+<div class="login">
+  <mat-dialog-content class="login-dialog">
+    <div class="login-title">
+      <span>账号密码登录</span>
+    </div>
+    <mat-form-field class="account-input">
+      <input matInput type="text" [(ngModel)]="account" placeholder="账号" />
+    </mat-form-field>
+    <mat-form-field class="passwd-input">
+      <input matInput type="text" [(ngModel)]="passwd" placeholder="密码" />
+    </mat-form-field>
+  </mat-dialog-content>
+  
+  <mat-dialog-actions class="login-dialog-actions">
+    <button mat-raised-button color="primary" class="confirm-button" (click)="login()">确定</button>
+    <button mat-raised-button mat-dialog-close class="cancle-button">取消</button>
+  </mat-dialog-actions>
+</div>

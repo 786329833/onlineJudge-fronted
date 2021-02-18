@@ -2,9 +2,12 @@
   display: flex;
   display: -webkit-flex;
   flex-direction: column;
-  height: 100%;
+  height: calc(100% - 20px);
 }
 
+.content ::ng-deep .mat-drawer-inner-container {
+  overflow: hidden;
+}
 .content {
   display: -webkit-flex;
   display: flex;
@@ -12,7 +15,8 @@
 }
 
 .left {
-  width: 200px;
+  width: 280px;
+  border-right: solid 10px rgb(243, 243, 243);
 }
 
 .middle {
@@ -24,5 +28,6 @@
 }
 
 .footer {
+  background-color:slateblue;
   height: 20px;
 }

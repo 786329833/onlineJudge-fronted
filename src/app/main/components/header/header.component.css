@@ -28,3 +28,10 @@
   line-height: 30px;
   margin: 3px 5px;
 }
+
+.register-dialog {
+  color: red;
+  position: absolute;
+  width: 100px;
+  float: left;
+}
