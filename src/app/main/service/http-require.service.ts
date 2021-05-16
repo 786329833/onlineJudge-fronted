@@ -73,4 +73,14 @@ export class HttpRequireService {
     return await res;
   }
 
+  async getStatus() {
+    const res = new Promise((resolve) => {
+      this.http.get('/api/judgestatus/').subscribe(res => {
+        console.log(res);
+        resolve(res);
+      });
+    });
+    return await res;
+  }
+
 }

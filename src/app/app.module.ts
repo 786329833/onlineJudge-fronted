@@ -21,6 +21,7 @@ import { MatTableModule } from '@angular/material/table';
 import { ProblemDataComponent } from './main/components/problem-data/problem-data.component';
 import { CodeEditorModule } from '@ngstack/code-editor';
 import { MatMenuModule } from '@angular/material/menu';
+import { StatusComponent } from './main/components/status/status.component';
 
 
 @NgModule({
@@ -34,7 +35,8 @@ import { MatMenuModule } from '@angular/material/menu';
     DialogLoginComponent,
     DialogRegisterComponent,
     ProblemsComponent,
-    ProblemDataComponent
+    ProblemDataComponent,
+    StatusComponent
   ],
   imports: [
     BrowserModule,
