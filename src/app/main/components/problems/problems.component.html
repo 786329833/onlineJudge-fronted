@@ -1,0 +1,45 @@
+<div>
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+    <ng-container matColumnDef="id" width="200">
+      <th mat-header-cell *matHeaderCellDef>标号</th>
+      <td mat-cell *matCellDef="let element">{{ element.id }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="title">
+      <th mat-header-cell *matHeaderCellDef>题目</th>
+      <td
+        mat-cell
+        *matCellDef="let element"
+        class="problem-title"
+        (click)="clickProblem(element.id)"
+      >
+        <a>
+          {{ element.title }}
+        </a>
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="score">
+      <th mat-header-cell *matHeaderCellDef>分数</th>
+      <td mat-cell *matCellDef="let element">{{ element.score }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="ac">
+      <th mat-header-cell *matHeaderCellDef>通过</th>
+      <td mat-cell *matCellDef="let element">{{ element.accept }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="submission">
+      <th mat-header-cell *matHeaderCellDef>提交</th>
+      <td mat-cell *matCellDef="let element">{{ element.submission }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="percent">
+      <th mat-header-cell *matHeaderCellDef>通过率</th>
+      <td mat-cell *matCellDef="let element">{{ element.percent }}</td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+  </table>
+</div>

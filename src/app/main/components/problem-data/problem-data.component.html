@@ -1,0 +1,59 @@
+<div class="problem-data-root">
+  <div class="description">
+    <h3 class="title">两数之和</h3>
+    <div class="problem-description">
+      <div class="des">题目描述</div>
+      <div>输出A+B</div>
+    </div>
+    <div class="input-description">
+      <div class="des">输入格式</div>
+      <div>1<=A,B<=100</div>
+    </div>
+    <div class="output-description">
+      <div class="des">输出格式</div>
+      <div>输出A+B的和</div>
+    </div>
+    <div class="example-container">
+      <div>
+        <div class="example-item" *ngFor="let item of exampleInput">
+          <div> <span class="des">输入样例：</span>{{ item }}</div>
+        </div>
+      </div>
+
+      <div>
+        <div class="example-item" *ngFor="let item of exampleOutput">
+          <div > <span class="des">输出样例：</span>{{ item }}</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="time">
+      <div class="des">时间限制：{{ problem.time }}</div>
+    </div>
+    <div class="memory">
+      <div class="des">内存限制：{{ problem.memory }}</div>
+    </div>
+    <button class="goback-button" mat-raised-button color="basic" (click)="goBack()">返回</button>
+
+  </div>
+  <div class="code">
+    <button class="code-button" mat-raised-button color="basic" [matMenuTriggerFor]="menu">语言</button>
+    <span style="display: inline-block; width: 100px;">{{language}}</span>
+    <button class="code-button" mat-raised-button color="basic" [matMenuTriggerFor]="menu">提交</button>
+    <span>答案正确！</span>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item (click)="language = 'C'">C</button>
+      <button mat-menu-item (click)="language = 'C++'">C++</button>
+      <button mat-menu-item (click)="language = 'Python3'">Python3</button>
+      <button mat-menu-item (click)="language = 'Java'">Java</button>
+    </mat-menu>
+    <ngs-code-editor
+      style="height: calc(100%);"
+      [theme]="theme"
+      [codeModel]="'json'"
+      [options]="options"
+      (valueChanged)="onCodeChanged($event)"
+    >
+    </ngs-code-editor>
+  </div>
+</div>

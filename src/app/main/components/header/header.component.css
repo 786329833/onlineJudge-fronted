@@ -29,6 +29,13 @@
   margin: 3px 5px;
 }
 
+.user-has-logined {
+  width: 180px;
+  align-items: center;
+  display: flex;
+  margin-left: auto;
+}
+
 .register-dialog {
   color: red;
   position: absolute;

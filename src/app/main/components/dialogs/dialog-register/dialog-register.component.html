@@ -8,10 +8,19 @@
         matInput
         type="text"
         [(ngModel)]="account"
-        placeholder="账号"
+        placeholder="用户名"
         [formControl]="accountFormControl"
       />
-      {{accountFormControl.hasError('required')}}
+      <mat-error *ngIf="accountFormControl.hasError('match')">{{
+        errorDetail.constructInvaild.msg
+      }}</mat-error>
+    </mat-form-field>
+    <mat-form-field class="account-input">
+      <input
+        matInput
+        type="text"
+        placeholder="学号"
+      />
       <mat-error *ngIf="accountFormControl.hasError('match')">{{
         errorDetail.constructInvaild.msg
       }}</mat-error>
@@ -31,7 +40,7 @@
       </mat-error>
     </mat-form-field>
     <mat-form-field class="username-input">
-      <input matInput type="text" [(ngModel)]="username" placeholder="用户名" />
+      <input matInput type="text" [(ngModel)]="username" placeholder="姓名" />
     </mat-form-field>
   </mat-dialog-content>
 

@@ -4,3 +4,9 @@
   font-size: 20px;
   width: 100%;
 }
+
+.navigation-item {
+    padding: 4px;
+    border-radius: 4px;
+    width: 240px;
+}

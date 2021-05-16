@@ -16,6 +16,11 @@ import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { DialogLoginComponent } from './main/components/dialogs/dialog-login/dialog-login.component';
 import { DialogRegisterComponent } from './main/components/dialogs/dialog-register/dialog-register.component';
+import { ProblemsComponent } from './main/components/problems/problems.component';
+import { MatTableModule } from '@angular/material/table';
+import { ProblemDataComponent } from './main/components/problem-data/problem-data.component';
+import { CodeEditorModule } from '@ngstack/code-editor';
+import { MatMenuModule } from '@angular/material/menu';
 
 
 @NgModule({
@@ -27,7 +32,9 @@ import { DialogRegisterComponent } from './main/components/dialogs/dialog-regist
     FooterComponent,
     DialogComponent,
     DialogLoginComponent,
-    DialogRegisterComponent
+    DialogRegisterComponent,
+    ProblemsComponent,
+    ProblemDataComponent
   ],
   imports: [
     BrowserModule,
@@ -39,7 +46,11 @@ import { DialogRegisterComponent } from './main/components/dialogs/dialog-regist
     HttpClientModule,
     MatDialogModule,
     MatInputModule,
-    MatButtonModule
+    MatButtonModule,
+    MatTableModule,
+    MatMenuModule,
+    CodeEditorModule.forRoot()
+
   ],
   providers: [],
   bootstrap: [AppComponent],

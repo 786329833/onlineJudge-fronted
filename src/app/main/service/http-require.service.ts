@@ -7,6 +7,7 @@ import { async } from 'rxjs/internal/scheduler/async';
 })
 export class HttpRequireService {
 
+
   constructor(
     private http: HttpClient
   ) { }
@@ -27,10 +28,49 @@ export class HttpRequireService {
     });
   }
 
-  login(api: string, registerParams: JSON) {
-    this.http.post('/api/' + api, registerParams).subscribe(res => {
+  async login(api: string, loginParams: object) {
+    const res = new Promise((resolve) => {
+      this.http.post('/api/login/', loginParams).subscribe(res => {
+        console.log(res);
+        resolve(res);
+      });
+    });
+    return await res;
+  }
+
+  async logout() {
+    const res = new Promise((resolve) => {
+      this.http.get('/api/logout/').subscribe(res => {
+        console.log(res);
+        resolve(res);
+      });
+    });
+    return await res;
+  }
+
+  getProblemTag() {
+    this.http.get('/api/problemtag/').subscribe(res => {
       console.log(res);
     });
+  }
+
+  async getProblems() {
+    const res = new Promise((resolve) => {
+      this.http.get('/api/problemdata/?auth=1&oj=LPOJ').subscribe((res: any) => {
+        resolve(res);
+      });
+    });
+    return await res;
+  }
+
+  async getProblemData(pid: string) {
+    const res = new Promise((resolve) => {
+      this.http.get(`/api/problem/${pid}/`).subscribe((res: any) => {
+        console.log(res);
+        resolve(res);
+      });
+    });
+    return await res;
   }
 
 }

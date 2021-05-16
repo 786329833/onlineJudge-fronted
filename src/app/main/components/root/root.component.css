@@ -31,3 +31,20 @@
   background-color:slateblue;
   height: 20px;
 }
+
+.input-container{
+  display: flex;
+  height: 34px;
+  align-items: center;
+}
+
+.title{
+  width: 80px;
+  align-items: center;
+  text-align: center;
+}
+
+.search-form {
+  width: 200px;
+}
+

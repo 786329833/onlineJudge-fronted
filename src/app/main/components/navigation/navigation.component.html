@@ -1,5 +1,12 @@
 <div class="navigation">
-  <p *ngFor="let item of navigation" (click)="item.clickEvent()">
-    {{item.name}}
+  <p
+    class="navigation-item"
+    *ngFor="let item of navigation"
+    (click)="item.clickEvent(item)"
+    [ngStyle]="{ background: item.enName === 'Problem list' ? '#9e9ef9' : 'white' }"
+  >
+    {{ item.name }}
   </p>
+  {{ selected }}
+
 </div>

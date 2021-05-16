@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { HttpRequireService } from '../../service/http-require.service';
 import { DialogLoginComponent } from '../dialogs/dialog-login/dialog-login.component';
 import { DialogRegisterComponent } from '../dialogs/dialog-register/dialog-register.component';
 import { DialogComponent } from '../dialogs/dialog.component';
@@ -10,15 +11,41 @@ import { DialogComponent } from '../dialogs/dialog.component';
 })
 export class HeaderComponent implements OnInit {
   title = '在线代码评测教学平台';
+  isLogin = false;
+  user;
   constructor(
-    public dialog: MatDialog
+    public dialog: MatDialog,
+    private httpServer: HttpRequireService,
   ) { }
 
   ngOnInit() {
+    this.initLogin();
+    console.log(sessionStorage);
+  }
+
+  initLogin() {
+    if (sessionStorage && sessionStorage.username !== '') {
+      this.user = sessionStorage;
+      this.isLogin = true;
+    }
   }
 
   login() {
-    this.dialog.open(DialogLoginComponent);
+    this.dialog.open(DialogLoginComponent).afterClosed().subscribe(data => {
+      this.initLogin();
+      console.log(sessionStorage);
+    });
+  }
+
+  logout() {
+    this.httpServer.logout().then(data => {
+      if (data === 'ok') {
+        sessionStorage.setItem("username", '');
+        sessionStorage.setItem("name", '');
+        sessionStorage.setItem("type", '');
+        this.isLogin = false;
+      }
+    });
   }
 
   register() {

@@ -8,7 +8,7 @@ import { Navigation } from '../../models/navigation';
 })
 export class NavigationComponent implements OnInit {
   navigation: Navigation[] = [];
-
+  selected = '';
   constructor() { }
 
   ngOnInit() {
@@ -22,8 +22,9 @@ export class NavigationComponent implements OnInit {
     this.navigation.push(new Navigation('讨论区', 'Bolletin BOard', '', this.testCLick));
   }
 
-  testCLick() {
-    console.log('click');
+  testCLick(item: Navigation) {
+    this.selected = item.enName;
+    console.log(this.selected);
   }
 
 }

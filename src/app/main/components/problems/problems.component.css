@@ -1,0 +1,11 @@
+table{
+  width: 100%;
+}
+
+a{
+  color: rgb(81, 81, 184);
+}
+
+.problem-title {
+  cursor: pointer;
+}
