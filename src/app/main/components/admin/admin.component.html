@@ -1,0 +1,24 @@
+<mat-tab-group>
+  <mat-tab label="添加题目"> 添加题目 </mat-tab>
+  <mat-tab label="编辑题目"> 编辑题目 </mat-tab>
+  <mat-tab label="发起考试"> 添加考试 </mat-tab>
+  <mat-tab label="管理班级"> 
+    <div class="class">
+      <mat-dialog-content class="login-dialog">
+        <div class="class-title">
+          <span>添加班级</span>
+        </div>
+        <mat-form-field class="account-input">
+          <input matInput type="text" [(ngModel)]="class.name" placeholder="班级名称" />
+        </mat-form-field>
+        <mat-form-field class="passwd-input">
+          <input matInput type="text" [(ngModel)]="class.maxLength" placeholder="人数上限" />
+        </mat-form-field>
+      </mat-dialog-content>
+      
+      <mat-dialog-actions class="login-dialog-actions">
+        <button mat-raised-button color="primary" class="confirm-button" (click)="createClass()">确定</button>
+      </mat-dialog-actions>
+    </div>
+  </mat-tab>
+</mat-tab-group>

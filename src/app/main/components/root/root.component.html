@@ -1,31 +1,46 @@
 <div class="root">
   <div class="header-root">
-    <app-header class="header"></app-header>
+    <app-header class="header" (showAdmin)="handleShowAdmin($event)"></app-header>
   </div>
   <mat-drawer-container class="content">
     <mat-drawer [(opened)]="showNavigation" mode="side" class="left">
-      <app-navigation></app-navigation>
+      <app-navigation
+        (showStatus)="handleShowStatus($event)"
+        (showIndex)="handleShowIndex($event)"
+      ></app-navigation>
     </mat-drawer>
     <mat-drawer-content class="middle">
-      <div *ngIf="!showProblemData">
+      <div *ngIf="showIndex">
         <div class="input-container">
           <span (click)="toggle()" class="title">编程题</span>
           <form class="search-form">
             <mat-form-field class="example-full-width">
-              <input class="search-input" name="search-input" matInput placeholder="请输入题目标题" [(ngModel)]="search" />
+              <input
+                class="search-input"
+                name="search-input"
+                matInput
+                placeholder="请输入题目标题"
+                [(ngModel)]="search"
+              />
             </mat-form-field>
           </form>
         </div>
-        <app-problems [problems]="problems" (showProblemData)="handleShowProblemData($event)"></app-problems>
-  
+        <app-problems
+          [problems]="problems"
+          (showProblemData)="handleShowProblemData($event)"
+        ></app-problems>
       </div>
 
-      <app-problem-data *ngIf="showProblemData" [problemId]="problemId" (showProblemData)="showProblemData = $event"></app-problem-data>
-
+      <app-problem-data
+        *ngIf="showProblemData"
+        [problemId]="problemId"
+        (showProblemData)="
+          showProblemData = $event; showIndex = !$event; showStatus = !$event
+        "
+      ></app-problem-data>
+      <app-status *ngIf="showStatus"></app-status>
+      <app-admin *ngIf="showAdmin"></app-admin>
     </mat-drawer-content>
-
-    
-
   </mat-drawer-container>
   <!-- <app-problem-data></app-problem-data> -->
 </div>

@@ -52,7 +52,7 @@ export class ProblemDataComponent implements OnInit {
       this.exampleInput = data.sinput.split('|#)');
       console.log(this.exampleInput);
       this.exampleOutput = data.soutput.split('|#)');
-    })
+    });
   }
 
 

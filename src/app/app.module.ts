@@ -22,6 +22,8 @@ import { ProblemDataComponent } from './main/components/problem-data/problem-dat
 import { CodeEditorModule } from '@ngstack/code-editor';
 import { MatMenuModule } from '@angular/material/menu';
 import { StatusComponent } from './main/components/status/status.component';
+import { AdminComponent } from './main/components/admin/admin.component';
+import { MatTabsModule } from '@angular/material/tabs';
 
 
 @NgModule({
@@ -36,7 +38,8 @@ import { StatusComponent } from './main/components/status/status.component';
     DialogRegisterComponent,
     ProblemsComponent,
     ProblemDataComponent,
-    StatusComponent
+    StatusComponent,
+    AdminComponent
   ],
   imports: [
     BrowserModule,
@@ -51,6 +54,7 @@ import { StatusComponent } from './main/components/status/status.component';
     MatButtonModule,
     MatTableModule,
     MatMenuModule,
+    MatTabsModule,
     CodeEditorModule.forRoot()
 
   ],

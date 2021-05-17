@@ -75,9 +75,9 @@ export class HttpRequireService {
 
   async getStatus() {
     const res = new Promise((resolve) => {
-      this.http.get('/api/judgestatus/').subscribe(res => {
+      const getStatus = this.http.get('/api/judgestatus/?limit=100').subscribe((res: any) => {
         console.log(res);
-        resolve(res);
+        resolve(res.results);
       });
     });
     return await res;

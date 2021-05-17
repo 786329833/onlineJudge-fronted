@@ -13,7 +13,10 @@ export class RootComponent implements OnInit {
   showNavigation = true;
   opened = true;
   problems;
+  showIndex = true;
   showProblemData = false;
+  showStatus = false;
+  showAdmin = false;
   problemId: number;
   search: string = '';
   constructor(
@@ -35,10 +38,34 @@ export class RootComponent implements OnInit {
     // this.httpRequireService.chooseDB();
   }
 
+  handleShowIndex($event) {
+    this.showIndex = $event;
+    this.showStatus = !$event;
+    this.showProblemData = !$event;
+    this.showAdmin = !$event;
+  }
+
   handleShowProblemData(pid: number) {
     console.log(pid);
+    this.showIndex = false;
+    this.showStatus = false;
+    this.showAdmin = false;
     this.showProblemData = true;
     this.problemId = pid;
+  }
+
+  handleShowStatus($event) {
+    this.showStatus = $event;
+    this.showIndex = !$event;
+    this.showAdmin = !$event;
+    this.showProblemData = !$event;
+  }
+
+  handleShowAdmin($event) {
+    this.showAdmin = $event;
+    this.showIndex = !$event;
+    this.showStatus = !$event;
+    this.showProblemData = !$event;
   }
 
   toggle() {
